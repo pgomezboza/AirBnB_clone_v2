@@ -44,7 +44,7 @@ class DBStorage:
         else:
             if type(cls) is str:
                 cls = eval(cls)
-            res_list = self.__session.query(cls).all()
+            res_list = res_list = self.__session.query(cls).all()
         return {'{}.{}'.format(type(obj).__name__, obj.id): obj
                 for obj in res_list}
 
